@@ -1,13 +1,6 @@
-#include<stdio.h>
+#include <stdio.h>
 
-// Method for Q5
-int fibonacci(int n) {
-	if(n < 2) {
-		return n;
-	} else {
-		return fibonacci(n - 1) + fibonacci(n - 2);
-	}
-}
+int fibonacci(int n);
 
 int main() {
 	
@@ -57,4 +50,13 @@ int main() {
 
 	return 0;
 }
+
+// Method for Q5
+int fibonacci(int n) {
+	if(n < 2) {
+		return n;
+	} else {
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
+ }
 
