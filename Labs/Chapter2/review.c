@@ -1,20 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main() {
 
-	// 1. "/" operator can divide
-	//    when x / y && x < y
-	//    - Devide int / float or double
-	//    - Devide float or double / int
+	// 1. "/" operator can do
+	//    - Integer division
+	//    - Floating-point division
 
 	// 2. Boolean in C
-	//    True : 1
+	//    True : 1 or any other nonzero numbers
 	//    False: 0
+	//    operators return 0 for false or 1 for true
 
 	// 3. Semicolon in C
-	//    - int i; <- end of a line
-	//    - ; <- empty method
-	//    - for(;;) <- infinite loop
+	//    - end of a declaration
+	//    - end of a statement
+	//    - in for loop control expressions
 
 	// 4. Rewrite for loop with while loop
 	int i;
@@ -55,3 +55,4 @@ int main() {
 
 	return 0;
 }
+
