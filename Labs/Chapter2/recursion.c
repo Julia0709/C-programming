@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+long factorial_loop(int n);
 long factorial(int n);
 long fibonacci(int n);
 long bunny_ears_loop(int n);
@@ -54,6 +55,19 @@ int main() {
 }
 
 // 1. Factorial
+// for roop
+long factorial_loop(int n) {
+	long f = 1;
+	if(n <= 0) {
+		return f;
+	}
+	for(int i = 1; i <= n; i++) {
+		f *= i;
+	}
+	return f;
+}
+
+// recursion
 long factorial(int n) {
 	return n == 0 ? 1 : n * factorial(n - 1);
 }
