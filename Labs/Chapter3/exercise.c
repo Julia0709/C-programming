@@ -14,7 +14,7 @@ int main() {
 	
 	// 2. a loop to call multbytwo()
 	for(int i = 1; i <= 10; i++) {
-		multbytwo(i);	
+		printf("%d: %d \n", i, multbytwo(i));	
 	}
 	
 	// 3. square()
@@ -29,15 +29,30 @@ int main() {
 
 	// 5. factorial()
 	// Output: 1 2 6 24 ... 3628800
-	for(int i = 0; i < 10; i++) {
+	for(int i = 0; i <= 10; i++) {
 		printf("%d: %ld \n", i, factorial(i));
 	}
 
 	// 6. celsius()
-	// Output: 
+	// Output: -40.00 ºC ... -104.44 ºF
 	for(float f = -40; f <= 220; f+=10) {
 		printf("%.0f ºF = %.2f ºC \n", f, celsius(f));
 	}
+
+	// 7. dicerolling()
+	// Output: Avarage: around 7 
+	printf("Avarage: %f \n", dicerolling());
+
+	// 8. randrange(int n) and int randrange2(int m, int n)
+	// Output: 0-12 2-12
+	int m = 2;
+	int n = 12;
+	printf("randrange: %d \n", randrange(n));
+	printf("randrange2: %d \n", randrange2(m, n));	
+	
+	// 9. dicehistogram();
+	// Output: graph
+	dicehistogram();
 
 	return 0;
 }
