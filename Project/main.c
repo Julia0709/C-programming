@@ -2,16 +2,22 @@
 #include <stdlib.h>
 #include "header.h"
 
-int main(void) {
+int main(int argc, char *argv[]) {
 
-//	printf("argc: %d \n", argc);
+	if (argc < 2) {
+		printf("No such a filename \n");
+		return(1);
+	}
 
-//	for(int i = 0; i < argc; i++) {
-//		printf("%s \n", argv[i]);
-//	}
+	printf("%s ", argv[0]);
+	
+	char *filename = argv[1];
+	open_file(filename);
 
+	printf("------------------------------ \n");
 
-	readEntireFile();
+//	readUntilMarker('a');
+
 
 	return EXIT_SUCCESS;
 }
