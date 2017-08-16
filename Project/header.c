@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "header.h"
 
 #define MAX 256
@@ -17,22 +18,33 @@ void open_file(char *filename) {
 		printf("started on %s \n", date);
 		printf("Input file: %s \n", filename);
 
+		printf("---------------------------------------------- \n");
+		read_file(fp);
+
 		fclose(fp);
 	} else {
 		printf("failed to open %s \n", filename);
 	}
 }
 
-void readUntilMarker(char marker) {
-	FILE *fp = fopen("inputfile1.txt", "r");
+void read_file(FILE *fp) {
+	// Check the file size
+	fseek(fp, 0, SEEK_END);
+	long fsize = ftell(fp);
+	fseek(fp, 0, SEEK_SET);
 
-	int c = getc(fp);
-	while(c != marker) {
-		putchar(c);
-		c = getc(fp);
-	}
+	char *str = malloc(fsize + 1);
+	fread(str, fsize, 1, fp);
 
-	fclose(fp);
+	const char s[2] = " ";
+	char *token = strtok(str, s);
+	printf("token: %s \n", token);
+
+// 	while( token != NULL ) {
+//		printf( " %s\n", token );
+//		token = strtok(NULL, s);
+//	}
+
 }
 
 void writeToFile(void) {

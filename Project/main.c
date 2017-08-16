@@ -14,8 +14,6 @@ int main(int argc, char *argv[]) {
 	char *filename = argv[1];
 	open_file(filename);
 
-	printf("------------------------------ \n");
-
 //	readUntilMarker('a');
 
 

@@ -2,7 +2,7 @@
 #define HEADER_H
 
 void open_file(char *filename);
-void readUntilMarker(char marker);
+void read_file(FILE *fp);
 void writeToFile(void);
 
 #endif
