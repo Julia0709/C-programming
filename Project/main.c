@@ -5,7 +5,7 @@
 int main(int argc, char *argv[]) {
 
 	if (argc < 2) {
-		printf("No such a filename \n");
+		printf("Missing a filename \n");
 		return(1);
 	}
 
