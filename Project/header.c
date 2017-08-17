@@ -50,8 +50,6 @@ int count_word(struct counter *ptr, char *token) {
 	while(ptr != NULL) {
 		if(strcmp(ptr->word, token) == 0) {
 			ptr->count++;
-			printf("word: %s \n", ptr->word);
-			printf("count: %d \n", ptr->count);
 			return 0;
 		}
 		ptr = ptr->next;
@@ -70,27 +68,13 @@ int read_file(FILE *fp) {
 	fread(str, fsize, 1, fp);
 
 	const char L[2] = "\n";
-	char *line = strtok(str, L);
-//	while(line != NULL) {
-//		const char S[2] = " ";
-//		char *token = strtok(str, S);
-//		printf("token1: %s \n", token);
+	const char S[2] = " ";
+	char *token = strtok(str, S);
 
-
-//		char *line = strtok(str, L);
-//		token = strtok(NULL, S);
-//		line = strtok(NULL, L);
-//	}
-
- 	while(line != NULL) {
-		printf("%s \n", line);
-
-//		const char S[2] = " ";
-//		char *token = strtok(line, S);
-//		printf("token: %s \n", token);
-
-		count_word(list, line);
-		line = strtok(NULL, L);
+	while(token != NULL) {
+		count_word(list, token);
+		strtok(NULL, L);
+		token = strtok(NULL, S);
 	}
 
 	print_result(list);

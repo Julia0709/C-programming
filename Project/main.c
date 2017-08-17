@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "header.h"
 
+// conpile(LINUX)
+// gcc -o main header.c main.c
+// run
+// $ ./main inputfile1.txt
+
 int main(int argc, char *argv[]) {
 
 	if (argc < 2) {
@@ -14,11 +19,6 @@ int main(int argc, char *argv[]) {
 	char *filename = argv[1];
 	open_file(filename);
 
-//	readUntilMarker('a');
-
-
 	return EXIT_SUCCESS;
 }
 
-// $ ./command_line_arg ./inputfile3
-// keywords: date, system, fflush
